@@ -1,0 +1,7 @@
+{
+    "PORT": 8000,
+    "SERVICE_URL": "e.g. https://<subdomain>.ngrok.io",
+    "APP_ID": "from the app settings page https://app.smooch.io/apps/<app_id>/settings",
+    "APP_KEY_ID": "from the app settings page https://app.smooch.io/apps/<app_id>/settings",
+    "APP_SECRET": "from the app settings page https://app.smooch.io/apps/<app_id>/settings"
+}

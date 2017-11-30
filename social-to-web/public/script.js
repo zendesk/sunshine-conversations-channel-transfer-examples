@@ -19,7 +19,15 @@
     }(window,document,"Smooch", appId);
 
     // Initialize Smooch and login
-    Smooch.init({ appId, authCode }).then(() => Smooch.login(id, token));
+    Smooch.init({ appId, authCode })
+    	.then(() => {
+    		/*
+				We login to illustrate how we can authenticate the user using the Web Messenger,
+				but under normal circumstances you would call this API with a token acquired from
+				your own login flow.
+			*/
+    		return Smooch.login(id, token);
+    	});
 
 
     // Utility function to get query parameters from the URL

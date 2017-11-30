@@ -1,16 +1,15 @@
 'use strict';
 
-require('dotenv').config();
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const Smooch = require('smooch-core');
 const jwt = require('jsonwebtoken');
+const config = require('../config.json');
 
-const APP_ID = process.env.APP_ID;
-const APP_KEY_ID = process.env.APP_KEY_ID;
-const APP_SECRET = process.env.APP_SECRET;
-const SERVICE_URL = process.env.SERVICE_URL;
+const APP_ID = config.APP_ID;
+const APP_KEY_ID = config.APP_KEY_ID;
+const APP_SECRET = config.APP_SECRET;
+const SERVICE_URL = config.SERVICE_URL;
 
 const smooch = new Smooch({
 	scope: 'app',
@@ -22,7 +21,7 @@ express()
 	.use(express.static('public'))
 	.use(bodyParser.json())
 	.post('/api/webhooks', webhookHandler)
-	.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`));
+	.listen(config.PORT, () => console.log(`Listening on port ${config.PORT}`));
 
 async function webhookHandler(req, res) {
 	const id = req.body.appUser._id;
@@ -60,7 +59,7 @@ async function webhookHandler(req, res) {
 	const token = jwt.sign({ scope: 'appUser', userId: id }, APP_SECRET, { header: { kid: APP_KEY_ID }});
 
 	await smooch.appUsers.sendMessage(id, {
-		text: 'Connect to me on the Web',
+		text: 'Chat with me in my web app',
 		type: 'text',
 		role: 'appMaker',
 		actions: [{
