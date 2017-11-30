@@ -24,6 +24,10 @@ express()
 	.listen(config.PORT, () => console.log(`Listening on port ${config.PORT}`));
 
 async function webhookHandler(req, res) {
+	if (req.body.trigger !== 'message:appUser') {
+		return res.end();
+	}
+
 	const id = req.body.appUser._id;
 
 

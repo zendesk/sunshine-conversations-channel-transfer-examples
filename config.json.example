@@ -3,5 +3,7 @@
     "SERVICE_URL": "e.g. https://<subdomain>.ngrok.io",
     "APP_ID": "from the app settings page https://app.smooch.io/apps/<app_id>/settings",
     "APP_KEY_ID": "from the app settings page https://app.smooch.io/apps/<app_id>/settings",
-    "APP_SECRET": "from the app settings page https://app.smooch.io/apps/<app_id>/settings"
+    "APP_SECRET": "from the app settings page https://app.smooch.io/apps/<app_id>/settings",
+    "ACCOUNT_KEY_ID": "from the account settings page https://app.smooch.io/account",
+    "ACCOUNT_SECRET": "from the account settings page https://app.smooch.io/account"
 }
