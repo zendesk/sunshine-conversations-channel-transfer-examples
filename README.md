@@ -26,4 +26,4 @@ For more information on this feature, see this [guide](https://docs.smooch.io/gu
 
 1. Make sure you have a social channel like Facebook Messenger configured on your Smooch app.
 
-2. In your browser, visit _localhost:8000_ or whatever host this service is deployed to and initiate a conversation over the Web messenger.
+2. In your browser, visit _localhost:8000_, or whatever host this service is deployed to, and initiate a conversation over the Web messenger.
